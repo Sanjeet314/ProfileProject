@@ -1,0 +1,72 @@
+<ng-container *ngIf="employee">
+    <div class="card">
+        <div class="card-body">
+            <div class="basic">
+                <div class="info-contact">
+                    <div class="basic-info">
+                        <div class="profile-photo">
+                            <img src="employee-1.webp"/>
+                        </div>
+                        <div class="name-and-desg">
+                            <p class="name">{{employee.name}}</p>
+                            <p class="desg">{{employee.designation}}</p>
+                        </div>
+                    </div>
+        
+                    <div class="contacts">
+                        <img class="send-aero" src="send-svgrepo-com.svg" (click)="toggleContacts()"/>
+                        <div class="contacts-list" [class.hidden]="!showContacts">
+                            <div class="rotated"></div>
+                            <div class="contacts-list-content-container">
+                                <ng-container *ngFor="let contact of employee.contactList">
+                                    <span class="contacts-list-content"><img [src]="contact.logo" [alt]="contact.typeOfConact"/></span>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+        
+                <div class="ratings">
+                    <p>3.5 Rating</p>
+                    <div>🌟🌟🌟🌟🌟</div>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="exp-doj">
+                    <p class="exp">Experience: {{employee.experience}} Years</p>
+                    <p class="doj">Date of Joining: {{employee.dateJoined | date: 'yyyy'}}</p>
+                </div>
+            </div>
+    
+        
+            <div class="section-container">
+                <div class="curr-team">
+                    Current Team: {{employee.currentTeam.name}} {{employee.currentTeam.location}}
+                </div>
+            </div>
+    
+            <div class="section-container">
+                <div class="rep-mgr">
+                    Reporting Manager: {{employee.reportingManger?.name}}
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="contact">
+                    <div class="phn-container">
+                        <img src="icons8-phone-36.png" />
+                        <p class="phone">{{employee.phoneNumber}}</p>
+                    </div>
+                    
+                    <div class="mail-container">
+                        <img src="email-svgrepo-com.svg" />
+                        <p class="email">{{employee.companyMailAdd}}</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+    </div>
+    
+</ng-container>

@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'InterviewProject';
+  isSideNavOpen = false;
+
+  constructor() {}
+
+  toggleSideNav() {
+    this.isSideNavOpen = !this.isSideNavOpen;
+  }
+
+  get contentMargin() {
+    return this.isSideNavOpen ? '250px' : '0'; // based on side nav width
+  }
+
 }

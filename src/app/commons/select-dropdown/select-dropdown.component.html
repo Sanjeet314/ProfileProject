@@ -1,0 +1,14 @@
+<div class="select-container">
+
+    <select (change)="onSelect($event)">
+
+      <option value="" selected>
+        Select an option
+      </option>
+      
+      <option *ngFor="let option of options" [value]="option.value" [selected]="option.isSelected">
+        {{ option.label }}
+      </option>
+    </select>
+  </div>
+  

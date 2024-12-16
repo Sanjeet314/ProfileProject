@@ -1,0 +1,11 @@
+.home-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 16px;
+}
+
+.home-container > app-employee-card {
+    flex: auto; 
+    box-sizing: border-box; 
+}

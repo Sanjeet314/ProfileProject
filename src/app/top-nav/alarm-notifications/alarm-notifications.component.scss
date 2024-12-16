@@ -1,0 +1,19 @@
+.notification-bell {
+    position: relative;
+    top: 5px;
+}
+  
+.notification-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    line-height: 2em;
+    font-size: 10px;
+}
+  

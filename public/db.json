@@ -1,0 +1,278 @@
+[
+    {
+      "id": "E001",
+      "profilePhoto": "employee-1.webp",
+      "name": "John Doe",
+      "designation": "Software Engineer",
+      "experience": 3,
+      "dateJoined": "2021-06-15T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T001",
+        "name": "Development Team",
+        "location": "New York",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M001",
+        "name": "Jane Smith"
+      },
+      "phoneNumber": 1234567890,
+      "companyMailAdd": "john.doe@company.com",
+      "contactList": [
+        {
+          "address": "123 Main St, New York, NY",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        },
+        {
+          "address": "456 Work Ave, New York, NY",
+          "typeOfConact": "Work",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E002",
+      "profilePhoto": "employee-1.webp",
+      "name": "Alice Johnson",
+      "designation": "Project Manager",
+      "experience": 8,
+      "dateJoined": "2018-09-12T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T002",
+        "name": "Project Management Team",
+        "location": "Chicago",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M002",
+        "name": "Robert Brown"
+      },
+      "phoneNumber": 9876543210,
+      "companyMailAdd": "alice.johnson@company.com",
+      "contactList": [
+        {
+          "address": "789 Market St, Chicago, IL",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E003",
+      "profilePhoto": "employee-1.webp",
+      "name": "Michael Clark",
+      "designation": "QA Engineer",
+      "experience": 4,
+      "dateJoined": "2020-01-20T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T001",
+        "name": "Development Team",
+        "location": "New York",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M001",
+        "name": "Jane Smith"
+      },
+      "phoneNumber": 1122334455,
+      "companyMailAdd": "michael.clark@company.com",
+      "contactList": [
+        {
+          "address": "101 QA Blvd, New York, NY",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E004",
+      "profilePhoto": "employee-1.webp",
+      "name": "Emily Davis",
+      "designation": "UI/UX Designer",
+      "experience": 5,
+      "dateJoined": "2019-05-10T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T003",
+        "name": "Design Team",
+        "location": "San Francisco",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M003",
+        "name": "Olivia Garcia"
+      },
+      "phoneNumber": 6677889900,
+      "companyMailAdd": "emily.davis@company.com",
+      "contactList": [
+        {
+          "address": "202 Design St, San Francisco, CA",
+          "typeOfConact": "Work",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E005",
+      "profilePhoto": "employee-1.webp",
+      "name": "Daniel Martinez",
+      "designation": "DevOps Engineer",
+      "experience": 6,
+      "dateJoined": "2017-08-25T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T004",
+        "name": "Infrastructure Team",
+        "location": "Seattle",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M004",
+        "name": "William Taylor"
+      },
+      "phoneNumber": 3344556677,
+      "companyMailAdd": "daniel.martinez@company.com",
+      "contactList": [
+        {
+          "address": "303 Cloud Ave, Seattle, WA",
+          "typeOfConact": "Work",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E006",
+      "profilePhoto": "employee-1.webp",
+      "name": "Sophia Wilson",
+      "designation": "Business Analyst",
+      "experience": 7,
+      "dateJoined": "2016-11-15T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T005",
+        "name": "Business Team",
+        "location": "Boston",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M005",
+        "name": "Mia Moore"
+      },
+      "phoneNumber": 5566778899,
+      "companyMailAdd": "sophia.wilson@company.com",
+      "contactList": [
+        {
+          "address": "404 Analyst St, Boston, MA",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E007",
+      "profilePhoto": "employee-1.webp",
+      "name": "David Thomas",
+      "designation": "Data Scientist",
+      "experience": 5,
+      "dateJoined": "2019-03-01T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T006",
+        "name": "Data Science Team",
+        "location": "Austin",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M006",
+        "name": "Charlotte Martinez"
+      },
+      "phoneNumber": 7788990011,
+      "companyMailAdd": "david.thomas@company.com",
+      "contactList": [
+        {
+          "address": "505 Data Dr, Austin, TX",
+          "typeOfConact": "Work",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E008",
+      "profilePhoto": "employee-1.webp",
+      "name": "Olivia Harris",
+      "designation": "HR Manager",
+      "experience": 10,
+      "dateJoined": "2014-02-28T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T007",
+        "name": "HR Team",
+        "location": "Miami",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M007",
+        "name": "Emma Robinson"
+      },
+      "phoneNumber": 2233445566,
+      "companyMailAdd": "olivia.harris@company.com",
+      "contactList": [
+        {
+          "address": "606 People St, Miami, FL",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E009",
+      "profilePhoto": "employee-1.webp",
+      "name": "James White",
+      "designation": "Backend Developer",
+      "experience": 4,
+      "dateJoined": "2020-10-10T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T001",
+        "name": "Development Team",
+        "location": "New York",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M001",
+        "name": "Jane Smith"
+      },
+      "phoneNumber": 4455667788,
+      "companyMailAdd": "james.white@company.com",
+      "contactList": [
+        {
+          "address": "707 Backend Rd, New York, NY",
+          "typeOfConact": "Work",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    },
+    {
+      "id": "E010",
+      "profilePhoto": "employee-1.webp",
+      "name": "Charlotte Lee",
+      "designation": "Frontend Developer",
+      "experience": 2,
+      "dateJoined": "2022-05-18T00:00:00.000Z",
+      "currentTeam": {
+        "id": "T001",
+        "name": "Development Team",
+        "location": "New York",
+        "emplist": []
+      },
+      "reportingManger": {
+        "id": "M001",
+        "name": "Jane Smith"
+      },
+      "phoneNumber": 9988776655,
+      "companyMailAdd": "charlotte.lee@company.com",
+      "contactList": [
+        {
+          "address": "808 Frontend Blvd, New York, NY",
+          "typeOfConact": "Home",
+          "logo": "icons8-phone-36.png"
+        }
+      ]
+    }
+  ]
+  
