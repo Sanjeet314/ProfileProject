@@ -7,6 +7,6 @@
     </div>
     <div class="nav-right">
       <app-alarm-notifications [notifications]="notifications$ | async"></app-alarm-notifications>
-      <app-select-dropdown [options]="dropdownOptions"></app-select-dropdown>
+      <app-select-dropdown [options]="dropdownOptions" (selectionChange)="onSelectionChange($event)"></app-select-dropdown>
     </div>
 </nav>

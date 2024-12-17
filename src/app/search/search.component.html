@@ -1,1 +1,15 @@
-<p>search works!</p>
+<div class="grid-container">
+    <div class="column1">
+        <app-search-component></app-search-component>
+    </div>
+    <div class="column2">
+        <div class="filter-grid">
+            <ng-container *ngIf="employees$ | async as employees">
+                <ng-container *ngFor="let employee of employees">
+                  <app-employee-card [employee]="employee"></app-employee-card>
+                </ng-container>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

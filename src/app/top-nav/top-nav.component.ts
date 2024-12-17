@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Alarm, DropdownOption, Notification } from '../utilities/utilities';
 import { Observable, of } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from '../AppStore/app.state';
+import * as EmployeeActions from '../AppStore/EmployeeStore/employee.actions';
 
 @Component({
   selector: 'app-top-nav',
@@ -9,15 +12,42 @@ import { Observable, of } from 'rxjs';
 })
 export class TopNavComponent {
   @Output() toggleSideNav = new EventEmitter<void>();
-  dropdownOptions: DropdownOption[] = [
-    { label: 'Option 1', value: 1, isSelected: false },
-    { label: 'Option 2', value: 2, isSelected: false },
-    { label: 'Option 3', value: 3, isSelected: false },
-  ];
+  dropdownOptions: DropdownOption [] = [
+    {
+      label: 'Project Management Team',
+      value: 'Project Management Team',
+      isSelected: false
+    },
+    {
+      label: 'Development Team',
+      value: 'Development Team',
+      isSelected: false
+    },
+    {
+      label: 'Design Team',
+      value: 'Design Team',
+      isSelected: false
+    },
+    {
+      label: 'Business Team',
+      value: 'Business Team',
+      isSelected: false
+    },
+    {
+      label: 'Data Science Team',
+      value: 'Data Science Team',
+      isSelected: false
+    },
+    {
+      label: 'HR Team',
+      value: 'HR Team',
+      isSelected: false
+    }
+  ]
 
   notifications$: Observable<Notification<Alarm>[]>;
 
-  constructor() {
+  constructor(private store: Store<AppState>) {
     // Example data for notifications
     const exampleNotifications: Notification<Alarm>[] = [
       {
@@ -48,8 +78,13 @@ export class TopNavComponent {
     this.toggleSideNav.emit();
   }
 
-  onSignOut() {
-    // Handle user sign-out logic here
-    console.log('User signed out');
+  onSelectionChange(selectedValue: string) {
+    this.dropdownOptions.forEach(option => {
+      option.isSelected = option.value === selectedValue;
+    });
+    const selectedOption = this.dropdownOptions.find(option => option.isSelected);
+    if(selectedOption && selectedOption.value) {
+      this.store.dispatch(EmployeeActions.applyFilter({filter: { currentTeam: { name: String(selectedOption.value)}}}));
+    }
   }
 }

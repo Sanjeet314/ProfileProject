@@ -1,0 +1,40 @@
+<div>
+    <form [formGroup]="employeeFilterForm" (ngSubmit)="onSubmit()">
+      <h3>Employee Filter Form</h3>
+
+      <label for="id">ID:</label>
+      <input id="id" type="text" formControlName="id" />
+
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" />
+
+      <label for="designation">Designation:</label>
+      <input id="designation" type="text" formControlName="designation" />
+
+      <label for="experience">Experience:</label>
+      <input id="experience" type="number" formControlName="experience" />
+
+      <!-- <label for="dateJoined">Date Joined:</label>
+      <input id="dateJoined" type="date" formControlName="dateJoined" /> -->
+
+      <fieldset formGroupName="reportingManager">
+        <legend>Reporting Manager</legend>
+        <label for="managerId">Manager ID:</label>
+        <input id="managerId" type="text" formControlName="id" />
+
+        <label for="managerName">Manager Name:</label>
+        <input id="managerName" type="text" formControlName="name" />
+      </fieldset>
+
+      <fieldset formGroupName="currentTeam">
+        <legend>Current Team</legend>
+        <label for="teamName">Team Name:</label>
+        <input id="teamName" type="text" formControlName="name" />
+
+        <label for="teamLocation">Location:</label>
+        <input id="teamLocation" type="text" formControlName="location" />
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+</div>

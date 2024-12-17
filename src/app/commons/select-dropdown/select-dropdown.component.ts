@@ -1,4 +1,4 @@
-import { Component, ContentChild, ElementRef, Input } from '@angular/core';
+import { Component, ContentChild, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 import { DropdownOption } from '../../utilities/utilities';
 
 
@@ -9,14 +9,10 @@ import { DropdownOption } from '../../utilities/utilities';
 })
 export class SelectDropdownComponent {
   @Input() options: DropdownOption[] = [];
-
+  @Output() selectionChange = new EventEmitter<string>();
 
   onSelect(event: Event) {
     const selectedValue = (event.target as HTMLSelectElement).value;
-
-
-    this.options.forEach(option => {
-      option.isSelected = option.value === selectedValue;
-    });
+    this.selectionChange.emit(selectedValue);
   }
 }
