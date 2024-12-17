@@ -12,7 +12,7 @@
         "location": "New York",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M001",
         "name": "Jane Smith"
       },
@@ -44,7 +44,7 @@
         "location": "Chicago",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M002",
         "name": "Robert Brown"
       },
@@ -71,7 +71,7 @@
         "location": "New York",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M001",
         "name": "Jane Smith"
       },
@@ -98,7 +98,7 @@
         "location": "San Francisco",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M003",
         "name": "Olivia Garcia"
       },
@@ -125,7 +125,7 @@
         "location": "Seattle",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M004",
         "name": "William Taylor"
       },
@@ -152,7 +152,7 @@
         "location": "Boston",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M005",
         "name": "Mia Moore"
       },
@@ -179,7 +179,7 @@
         "location": "Austin",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M006",
         "name": "Charlotte Martinez"
       },
@@ -206,7 +206,7 @@
         "location": "Miami",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M007",
         "name": "Emma Robinson"
       },
@@ -233,7 +233,7 @@
         "location": "New York",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M001",
         "name": "Jane Smith"
       },
@@ -260,7 +260,7 @@
         "location": "New York",
         "emplist": []
       },
-      "reportingManger": {
+      "reportingManager": {
         "id": "M001",
         "name": "Jane Smith"
       },

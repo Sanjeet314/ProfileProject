@@ -38,7 +38,7 @@ export interface Employee {
     experience: number;
     dateJoined: Date;
     currentTeam: Team;
-    reportingManger?: { id: string; name: string; };
+    reportingManager?: { id: string; name: string; };
     phoneNumber: number;
     companyMailAdd: string;
     contactList: ContactTypes[];

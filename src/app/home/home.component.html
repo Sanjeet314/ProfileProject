@@ -1,5 +1,7 @@
 <div class="home-container">
-    <ng-container *ngFor="let employee of employees">
-        <app-employee-card [employee]="employee"></app-employee-card>
+    <ng-container *ngIf="employees$ | async as employees">
+        <ng-container *ngFor="let employee of employees">
+          <app-employee-card [employee]="employee"></app-employee-card>
+        </ng-container>
     </ng-container>
 </div>

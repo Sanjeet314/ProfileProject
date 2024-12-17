@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from '../AppService/employee.service';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Employee } from '../utilities/utilities';
+import * as EmployeeActions from '../AppStore/EmployeeStore/employee.actions';
+import * as EmployeeSelectors from '../AppStore/EmployeeStore/employee.selectors';
+import { AppState } from '../AppStore/app.state';
 
 @Component({
   selector: 'app-home',
@@ -9,20 +13,17 @@ import { Employee } from '../utilities/utilities';
 })
 export class HomeComponent implements OnInit {
 
-  employees: Employee[] = [];
+  employees$: Observable<Employee[]>;
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private store: Store<AppState>) {
+    this.employees$ = this.store.select(EmployeeSelectors.selectAllEmployees);
+  }
 
   ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe(
-      (data) => {
-        this.employees = data;
-        console.log(this.employees);
-      },
-      (error) => {
-        console.error('Error fetching employee data:', error);
-      }
-    );
+    this.store.dispatch(EmployeeActions.loadEmployees());
   }
+
+
+
 
 }

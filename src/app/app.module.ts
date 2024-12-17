@@ -11,6 +11,10 @@ import { SelectDropdownComponent } from './commons/select-dropdown/select-dropdo
 import { AlarmNotificationsComponent } from './top-nav/alarm-notifications/alarm-notifications.component';
 import { EmployeeCardComponent } from './commons/employee-card/employee-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './AppStore/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EmployeeEffects } from './AppStore/EmployeeStore/employee.effects';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot([EmployeeEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
