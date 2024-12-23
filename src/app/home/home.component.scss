@@ -1,11 +1,13 @@
 .home-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 20% 1fr;
     gap: 4px;
     padding: 16px;
 }
 
-.home-container > app-employee-card {
-    flex: auto; 
-    box-sizing: border-box; 
+.employee-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));;
+    gap: 4px;
+    padding: 16px;
 }

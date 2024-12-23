@@ -12,7 +12,15 @@
                             <p class="desg">{{employee.designation}}</p>
                         </div>
                     </div>
-        
+
+                    <div>
+                        <img class="send-aero" src="delete.svg" (click)="onDelete()"/>
+                    </div>
+
+                    <div>
+                        <img class="send-aero" src="edit.svg" (click)="onEdit()"/>
+                    </div>
+
                     <div class="contacts">
                         <img class="send-aero" src="send-svgrepo-com.svg" (click)="toggleContacts()"/>
                         <div class="contacts-list" [class.hidden]="!showContacts">

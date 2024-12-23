@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Alarm, DropdownOption, Notification } from '../utilities/utilities';
+import { Alarm, DropdownOption, Notification, Teams } from '../utilities/utilities';
 import { Observable, of } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AppState } from '../AppStore/app.state';
@@ -12,38 +12,7 @@ import * as EmployeeActions from '../AppStore/EmployeeStore/employee.actions';
 })
 export class TopNavComponent {
   @Output() toggleSideNav = new EventEmitter<void>();
-  dropdownOptions: DropdownOption [] = [
-    {
-      label: 'Project Management Team',
-      value: 'Project Management Team',
-      isSelected: false
-    },
-    {
-      label: 'Development Team',
-      value: 'Development Team',
-      isSelected: false
-    },
-    {
-      label: 'Design Team',
-      value: 'Design Team',
-      isSelected: false
-    },
-    {
-      label: 'Business Team',
-      value: 'Business Team',
-      isSelected: false
-    },
-    {
-      label: 'Data Science Team',
-      value: 'Data Science Team',
-      isSelected: false
-    },
-    {
-      label: 'HR Team',
-      value: 'HR Team',
-      isSelected: false
-    }
-  ]
+  dropdownOptions: DropdownOption [] = Teams;
 
   notifications$: Observable<Notification<Alarm>[]>;
 
@@ -85,6 +54,8 @@ export class TopNavComponent {
     const selectedOption = this.dropdownOptions.find(option => option.isSelected);
     if(selectedOption && selectedOption.value) {
       this.store.dispatch(EmployeeActions.applyFilter({filter: { currentTeam: { name: String(selectedOption.value)}}}));
+    } else {
+        this.store.dispatch(EmployeeActions.applyFilter({filter: {}}));
     }
   }
 }

@@ -14,15 +14,36 @@ import { AppState } from '../AppStore/app.state';
 export class HomeComponent implements OnInit {
 
   employees$: Observable<Employee[]>;
+  selectedEmployee: Employee | null = null;
+  isEditMode: boolean = false;
 
   constructor(private store: Store<AppState>) {
-    this.employees$ = this.store.select(EmployeeSelectors.selectAllEmployees);
+    this.employees$ = this.store.select(EmployeeSelectors.selectFilteredEmployees);
   }
 
   ngOnInit(): void {
     this.store.dispatch(EmployeeActions.loadEmployees());
   }
 
+  onEditEmployee(employee: Employee) {
+    this.selectedEmployee = employee;
+    this.isEditMode = true;
+  }
+
+  onDeleteEmployee(id: string) {
+    this.store.dispatch(EmployeeActions.deleteEmployee({ id }));
+  }
+
+  handleFormSubmit(employeeData: Employee) {
+    if (this.isEditMode) {
+      this.store.dispatch(EmployeeActions.updateEmployee({ employee: employeeData }));
+    } else {
+      this.store.dispatch(EmployeeActions.addEmployee({ employee: employeeData }));
+    }
+
+    this.selectedEmployee = null;
+    this.isEditMode = false;
+  }
 
 
 

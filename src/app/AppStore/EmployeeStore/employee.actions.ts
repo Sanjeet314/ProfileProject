@@ -25,3 +25,18 @@ export const applyFilter = createAction(
   EMPLOYEE_ACTIONS.APPLY_FILTER,
   props<{ filter: EmployeeFilterState }>()
 );
+
+export const addEmployee = createAction(
+  '[Employee] Add Employee',
+  props<{ employee: Employee }>()
+);
+
+export const updateEmployee = createAction(
+  '[Employee] Update Employee',
+  props<{ employee: Employee }>()
+);
+
+export const deleteEmployee = createAction(
+  '[Employee] Delete Employee',
+  props<{ id: string }>()
+);

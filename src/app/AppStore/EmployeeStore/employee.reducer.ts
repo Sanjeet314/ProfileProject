@@ -45,10 +45,43 @@ export const employeeReducer = createReducer(
     const filteredEmployees = state.employees.filter((employee) =>
       matchesFilter(employee, filter)
     );
+    console.log(filteredEmployees);
     return {
       ...state,
       filterCriteria: filter,
       filteredEmployees,
     };
-  })
+  }),
+
+  on(EmployeeActions.addEmployee, (state, { employee }) => ({
+    ...state,
+    employees: [...state.employees, employee],
+    filteredEmployees: [...state.employees, employee]
+  })),
+
+  on(EmployeeActions.updateEmployee, (state, { employee }) => {
+    const updatedEmployees = state.employees.map((e) =>
+      e.id === employee.id ? { ...employee } : e
+    );
+    const updatedFilteredEmployees = state.filteredEmployees.map((e) =>
+      e.id === employee.id ? { ...employee } : e
+    );
+  
+    return {
+      ...state,
+      employees: updatedEmployees,
+      filteredEmployees: updatedFilteredEmployees,
+    };
+  }),
+
+  on(EmployeeActions.deleteEmployee, (state, { id }) => {
+    const updatedEmployees = state.employees.filter((e) => e.id !== id);
+    const updatedFilteredEmployees = state.filteredEmployees.filter((e) => e.id !== id);
+  
+    return {
+      ...state,
+      employees: updatedEmployees,
+      filteredEmployees: updatedFilteredEmployees,
+    };
+  }),
 );

@@ -43,3 +43,37 @@ export interface Employee {
     companyMailAdd: string;
     contactList: ContactTypes[];
 }
+
+
+export const Teams = [
+    {
+      label: 'Project Management Team',
+      value: 'Project Management Team',
+      isSelected: false
+    },
+    {
+      label: 'Development Team',
+      value: 'Development Team',
+      isSelected: false
+    },
+    {
+      label: 'Design Team',
+      value: 'Design Team',
+      isSelected: false
+    },
+    {
+      label: 'Business Team',
+      value: 'Business Team',
+      isSelected: false
+    },
+    {
+      label: 'Data Science Team',
+      value: 'Data Science Team',
+      isSelected: false
+    },
+    {
+      label: 'HR Team',
+      value: 'HR Team',
+      isSelected: false
+    }
+]

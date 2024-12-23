@@ -15,6 +15,8 @@ import { appReducer } from './AppStore/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { EmployeeEffects } from './AppStore/EmployeeStore/employee.effects';
 import { SharedModuleModule } from './shared-module/shared-module.module';
+import { AddEmployeeFormComponent } from './add-employee-form/add-employee-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
     MyAccountComponent,
     SelectDropdownComponent,
     AlarmNotificationsComponent,
+    AddEmployeeFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,9 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
     HttpClientModule,
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([EmployeeEffects]),
-    SharedModuleModule
+    SharedModuleModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

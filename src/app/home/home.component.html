@@ -1,7 +1,21 @@
 <div class="home-container">
+  <div class="employee-form-container">
+    <app-add-employee-form
+      [employeeToEdit]="selectedEmployee"
+      [isEditMode]="isEditMode"
+      (formSubmit)="handleFormSubmit($event)"
+    ></app-add-employee-form>
+  </div>
     <ng-container *ngIf="employees$ | async as employees">
+      <div class="employee-list-container">
         <ng-container *ngFor="let employee of employees">
-          <app-employee-card [employee]="employee"></app-employee-card>
+          <app-employee-card
+          [employee]="employee"
+          (edit)="onEditEmployee(employee)"
+          (delete)="onDeleteEmployee(employee.id)"
+        ></app-employee-card>
         </ng-container>
+      </div>
+        
     </ng-container>
 </div>
