@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h2>Add Employee</h2>
+    <h2>{{ isEditMode ? 'Edit' : 'Add' }} Employee</h2>
     <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
       <div class="form-group">
         <label for="name">Name:</label>
@@ -39,7 +39,7 @@
         </select>
       </div>
   
-      <button type="submit" class="submit-button" [disabled]="employeeForm.invalid">{{ isEditMode ? 'Update' : 'Add' }}</button>
+      <button type="submit" class="submit-button">{{ isEditMode ? 'Update' : 'Add' }}</button>
     </form>
 </div>
   

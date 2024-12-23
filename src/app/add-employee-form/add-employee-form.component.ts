@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { Team, Employee, Teams } from '../utilities/utilities';
-import * as EmployeeActions from '../AppStore/EmployeeStore/employee.actions';
 
 @Component({
   selector: 'app-add-employee-form',
@@ -10,14 +8,15 @@ import * as EmployeeActions from '../AppStore/EmployeeStore/employee.actions';
   styleUrl: './add-employee-form.component.scss'
 })
 export class AddEmployeeFormComponent {
-  employeeForm!: FormGroup;
-  teams: Team[] = [];
-
   @Input() employeeToEdit: Employee | null = null;
   @Input() isEditMode: boolean = false;
   @Output() formSubmit = new EventEmitter<Employee>();
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  teams: Team[] = []
+
+  employeeForm!: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.teams = Teams.map((team, index) => ({
@@ -26,25 +25,44 @@ export class AddEmployeeFormComponent {
       location: 'HQ',
       emplist: [],
     }));
-    this.employeeForm = this.fb.group({
-      name: ['', Validators.required],
-      designation: ['', Validators.required],
-      experience: [0, [Validators.required, Validators.min(0)]],
-      dateJoined: ['', Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
-      companyMailAdd: ['', [Validators.required, Validators.email]],
-      currentTeam: ['', Validators.required],
-    });
+    this.initializeForm();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['employeeToEdit'] && this.employeeToEdit) {
-      this.employeeForm.patchValue(this.employeeToEdit);
+      this.populateForm(this.employeeToEdit);
     }
   }
 
-  onSubmit() {
-    this.formSubmit.emit(this.employeeForm.value);
+  initializeForm(): void {
+    this.employeeForm = this.fb.group({
+      name: ['', Validators.required],
+      profilePhoto: ['', Validators.required],
+      designation: ['', Validators.required],
+      experience: [0, Validators.required],
+      dateJoined: ['', Validators.required],
+      currentTeam: [null, Validators.required],
+      reportingManager: [null],
+      phoneNumber: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+      companyMailAdd: ['', [Validators.required, Validators.email]],
+      contactList: [[]],
+    });
+  }
+
+  populateForm(employee: Employee): void {
+    this.employeeForm.patchValue({ ...employee });
+  }
+
+  onSubmit(): void {
+    const employeeData: Employee = {
+      ...this.employeeForm.value,
+      id: this.employeeToEdit?.id || this.generateUniqueId(),
+    };
+    this.formSubmit.emit(employeeData);
     this.employeeForm.reset();
+  }
+
+  private generateUniqueId(): string {
+    return Math.random().toString(36).substr(2, 9);
   }
 }

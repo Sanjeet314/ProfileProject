@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   handleFormSubmit(employeeData: Employee) {
     if (this.isEditMode) {
-      this.store.dispatch(EmployeeActions.updateEmployee({ employee: employeeData }));
+      this.store.dispatch(EmployeeActions.updateEmployee({ employee: { ...employeeData, id: this.selectedEmployee!.id } }));
     } else {
       this.store.dispatch(EmployeeActions.addEmployee({ employee: employeeData }));
     }
